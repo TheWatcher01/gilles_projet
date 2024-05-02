@@ -2,7 +2,7 @@
 from bs4 import BeautifulSoup
 import csv
 
-# Function to extract text content from local HTML file using a CSS selector
+# Function to extract text content from local HTML file using a CSS selector.
 
 
 def extract_content_from_html(file_path, css_selector):
