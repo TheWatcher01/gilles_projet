@@ -3,6 +3,8 @@ from bs4 import BeautifulSoup
 import csv
 
 # Function to extract text content from local HTML file using a CSS selector.
+
+
 def extract_content_from_html(file_path, css_selector):
     # Open and read the local HTML file
     with open(file_path, 'r', encoding='utf-8') as file:
