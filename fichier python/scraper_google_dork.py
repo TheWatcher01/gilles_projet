@@ -1,5 +1,6 @@
-# Importing the BeautifulSoup library
+# Importing the required libraries
 from bs4 import BeautifulSoup
+import csv
 
 # Function to extract text content from local HTML file using a CSS selector
 
@@ -18,9 +19,14 @@ def extract_content_from_html(file_path, css_selector):
     # Extract and return the text content of each element
     return [element.get_text(strip=True) for element in elements]
 
-# Example usage (commented out to prevent execution)
-# file_path = "path/to/your/localfile.html"
-# css_selector = "#rso > div:nth-child(3) > div > div > div:nth-child(2) > div > span"
-# content_list = extract_content_from_html(file_path, css_selector)
-# for content in content_list:
-#     print(content)
+
+# Example usage
+file_path = "/home/thewatcher/gilles_projet/fichier_html/google_dorks/site_www.in-cosmetics.com inurl_exhibitor-details intext__COMPANY EMAIL_ - Recherche Google.html"
+css_selector = "#rso > div:nth-child(3) > div > div > div:nth-child(2) > div > span"
+content_list = extract_content_from_html(file_path, css_selector)
+
+# Write the results to a CSV file
+with open('results.csv', 'w', newline='', encoding='utf-8') as file:
+    writer = csv.writer(file)
+    for content in content_list:
+        writer.writerow([content])
