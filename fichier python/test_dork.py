@@ -1,12 +1,3 @@
-#!/usr/bin/python3
-
-"""
-File: test_dork.py
-Author: TheWatcher01
-Date: 2024-05-02
-Description: Description
-"""
-
 # Importing the required libraries
 from bs4 import BeautifulSoup
 import csv
